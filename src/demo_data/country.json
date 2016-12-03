@@ -1,0 +1,23 @@
+[
+  {
+    "country": "US",
+    "population": 323500000,
+    "expectancy": 78.94,
+    "cost": 9024.21,
+    "code": "US"
+  },
+  {
+    "country": "Switzerland",
+    "population": 8306200,
+    "expectancy": 82.85,
+    "cost": 6786.57,
+    "code": "CH"
+  },
+  {
+    "country": "Norway",
+    "population": 5213985,
+    "expectancy": 81.75,
+    "cost": 6081,
+    "code": "NO"
+  }
+]

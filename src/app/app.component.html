@@ -1,3 +1,18 @@
 <h1>
-  {{title}}
+  {{title}}<br/><br/>
 </h1>
+  <a routerLinkActive="active" [routerLink]="['/scales']">1. Scales (linear, ordinal, quantize)</a><br/>
+  <a routerLinkActive="active" [routerLink]="['/data']">2. Data</a><br>
+  <a routerLinkActive="active" [routerLink]="['/selections']">3. Selections & Create DOM</a><br>
+  <a routerLinkActive="active" [routerLink]="['/visualization']">4. Visualization</a><br>
+  <a routerLinkActive="active" [routerLink]="['/axes']">5. Axes</a><br>
+  <a routerLinkActive="active" [routerLink]="['/scatter']">6. Scatter</a><br>
+  <a routerLinkActive="active" [routerLink]="['/line']">7. Line Chart</a><br>
+  <a routerLinkActive="active" [routerLink]="['/area']">8. Area Chart</a><br>
+  <a routerLinkActive="active" [routerLink]="['/animate']">9. Animate </a><br>
+  <a routerLinkActive="active" [routerLink]="['/transitions']">10. Transitions</a><br>
+  <a routerLinkActive="active" [routerLink]="['/general']">11. General Update Pattern</a><br>
+
+
+<router-outlet></router-outlet>
+<!-- Routed views go here -->

@@ -1,0 +1,7 @@
+.chart {
+  background: lightgrey;
+  border: 1px solid black;
+}
+rect {
+  fill: steelblue;
+}
