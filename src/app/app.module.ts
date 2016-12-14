@@ -17,6 +17,9 @@ import { AreaComponent } from './area/area.component';
 import { AnimateComponent } from './animate/animate.component';
 import { TransitionsComponent } from './transitions/transitions.component';
 import { GeneralUpdatePatternComponent } from './general-update-pattern/general-update-pattern.component';
+import {HeaderComponent} from "./header/header.component";
+import {DashboardComponent} from "./Dashboard/dashboard.component";
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { GeneralUpdatePatternComponent } from './general-update-pattern/general-
     AreaComponent,
     AnimateComponent,
     TransitionsComponent,
-    GeneralUpdatePatternComponent
+    GeneralUpdatePatternComponent,
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
