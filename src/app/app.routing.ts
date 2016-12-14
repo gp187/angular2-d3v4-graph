@@ -11,12 +11,19 @@ import {AreaComponent}                  from "./area/area.component";
 import {AnimateComponent}               from "./animate/animate.component";
 import {TransitionsComponent}           from "./transitions/transitions.component";
 import {GeneralUpdatePatternComponent}  from "./general-update-pattern/general-update-pattern.component";
+import {DashboardComponent} from "./Dashboard/dashboard.component";
 
 export const routes: Routes = [
     {
+
         path: '',
-        redirectTo: 'dashboard',
         pathMatch: 'full',
+        component: DashboardComponent
+    },
+    {
+      path: 'dashboard',
+      pathMatch: 'full',
+      component: DashboardComponent
     },
     {
       path: 'scales',
