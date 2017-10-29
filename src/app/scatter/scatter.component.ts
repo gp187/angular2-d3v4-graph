@@ -42,7 +42,7 @@ export class ScatterComponent implements OnInit {
       .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
 
-    d3.json('demo_data/country.json', function (err, data: any) {
+    d3.json('../demo_data/country.json', function (err, data: any) {
       // -->Generate: scales [from,to] where you want
       const yScale = d3.scaleLinear()
         .domain(d3.extent(data, (d: any) => +d.expectancy))

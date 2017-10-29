@@ -42,7 +42,7 @@ export class LineComponent implements OnInit {
       .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
 
-    d3.json('demo_data/stocks.json', function (err, data: any) {
+    d3.json('../demo_data/stocks.json', function (err, data: any) {
 
       const parseTime = d3.timeParse('%Y/%m/%d');
       data.forEach(company => {

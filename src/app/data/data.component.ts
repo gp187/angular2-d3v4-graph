@@ -18,7 +18,7 @@ export class DataComponent implements OnInit {
     // d3.tsv('demo_data/names.tsv', function (data) {
     //   log(data);
     // })
-    d3.json('demo_data/names.json', function (data) {
+    d3.json('../demo_data/names.json', function (data) {
       const min = d3.min(data, (d: any) => d.age);
       const max = d3.max(data, (d: any) => d.age);
       log(min + ' >> ' + max);
