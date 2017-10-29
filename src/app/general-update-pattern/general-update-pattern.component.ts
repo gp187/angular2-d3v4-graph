@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 
-
 @Component({
   selector: 'app-general-update-pattern',
   templateUrl: './general-update-pattern.component.html',
@@ -10,44 +9,41 @@ import * as d3 from 'd3';
 export class GeneralUpdatePatternComponent implements OnInit {
   public svg;
   public data;
-  public opts = {};
+  public opts: any = {};
   public xScale;
   public yScale;
   constructor() { }
 
   ngOnInit() {
     this.data = [
-      {name: 'Alice', math: 37,   science: 62,   language: 54},
-      {name: 'Billy', math: null, science: 34,   language: 85},
-      {name: 'Cindy', math: 86,   science: 48,   language: null},
-      {name: 'David', math: 44,   science: null, language: 65},
-      {name: 'Emily', math: 59,   science: 73,   language: 29}
+      { name: 'Alice', math: 37, science: 62, language: 54 },
+      { name: 'Billy', math: null, science: 34, language: 85 },
+      { name: 'Cindy', math: 86, science: 48, language: null },
+      { name: 'David', math: 44, science: null, language: 65 },
+      { name: 'Emily', math: 59, science: 73, language: 29 }
     ];
-    this.opts = {margin : { top: 10, right: 10, bottom: 30, left: 30 }}
+    this.opts = { margin: { top: 10, right: 10, bottom: 30, left: 30 } }
     this.opts.width = 400 - this.opts.margin.left - this.opts.margin.right,
-    this.opts.height = 535 - this.opts.margin.top - this.opts.margin.bottom
-
-
+      this.opts.height = 535 - this.opts.margin.top - this.opts.margin.bottom;
 
     function responsify(svg) {
-      let container = d3.select(svg.node().parentNode),
-        width = parseInt(svg.style("width")),
-        height = parseInt(svg.style("height")),
+      const container = d3.select(svg.node().parentNode),
+        width = parseInt(svg.style('width'), 10),
+        height = parseInt(svg.style('height'), 10),
         aspect = width / height;
 
-      svg.attr("viewBox", "0 0 " + width + " " + height)
-        .attr("preserveAspectRatio","xMinYMid")
+      svg.attr('viewBox', '0 0 ' + width + ' ' + height)
+        .attr('preserveAspectRatio', 'xMinYMid')
         .call(resize);
 
-      d3.select(window).on("resize." + container.attr("id"), resize);
+      d3.select(window).on('resize.' + container.attr('id'), resize);
 
       function resize() {
-        let targetWidth = parseInt(container.style("width"));
-        svg.attr("width", targetWidth);
-        svg.attr("height", Math.round(targetWidth / aspect));
+        const targetWidth = parseInt(container.style('width'), 10);
+        svg.attr('width', targetWidth);
+        svg.attr('height', Math.round(targetWidth / aspect));
       }
     }
-
 
     this.svg = d3.select('.chart')
       .append('svg')
@@ -73,23 +69,21 @@ export class GeneralUpdatePatternComponent implements OnInit {
       .append('g')
       .call(d3.axisLeft(this.yScale));
 
-
     // ******************************************************
-
 
   }
 
-  render(subject='math'): void {
-    let t = d3.transition().duration(1000);
+  render(subject = 'math'): void {
+    const t = d3.transition(null).duration(1000);
 
-    let update = this.svg.selectAll('rect')
+    const update = this.svg.selectAll('rect')
       .data(this.data.filter(d => d[subject]), d => d.name);
 
     update
       .exit()
       .transition(t)
-        .attr('y', this.opts.height)
-        .attr('height', 0)
+      .attr('y', this.opts.height)
+      .attr('height', 0)
       .remove();
 
     update
@@ -98,19 +92,17 @@ export class GeneralUpdatePatternComponent implements OnInit {
       .attr('y', d => this.yScale(d[subject]))
       .attr('height', d => this.opts.height - this.yScale(d[subject]))
 
-    let enter = update
+    const enter = update
       .enter()
       .append('rect')
-        .attr('y', this.opts.height)
-        .attr('height', 0)
-        .attr('x', d => this.xScale(d.name))
-        .attr('width', d => this.xScale.bandwidth())
+      .attr('y', this.opts.height)
+      .attr('height', 0)
+      .attr('x', d => this.xScale(d.name))
+      .attr('width', d => this.xScale.bandwidth())
       .transition(t)
-        .delay(2000)
-        .attr('y', d => this.yScale(d[subject]))
-        .attr('height', d => this.opts.height - this.yScale(d[subject]))
+      .delay(2000)
+      .attr('y', d => this.yScale(d[subject]))
+      .attr('height', d => this.opts.height - this.yScale(d[subject]))
   }
-
-
 
 }

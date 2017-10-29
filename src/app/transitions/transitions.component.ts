@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 
-
 @Component({
   selector: 'app-transitions',
   templateUrl: './transitions.component.html',
@@ -13,24 +12,23 @@ export class TransitionsComponent implements OnInit {
 
   ngOnInit() {
 
-
   }
 
   go(): void {
-      let t = d3.transition()
-        .delay(1000)
-        .duration(1000)
-      d3.selectAll('.block')
-        .transition(t)
-        .style('width', '400px')
+    const t = d3.transition(null)
+      .delay(1000)
+      .duration(1000)
+    d3.selectAll('.block')
+      .transition(t)
+      .style('width', '400px')
 
-      d3.select('.a')
-        .transition(t)
-        .style('background-color', 'blue')
+    d3.select('.a')
+      .transition(t)
+      .style('background-color', 'blue')
 
-      d3.select('.b')
-        .transition(t)
-        .style('background-color', 'red')
+    d3.select('.b')
+      .transition(t)
+      .style('background-color', 'red')
   }
 
   configure(t: any, delay: number, duration: number): any {
@@ -38,10 +36,10 @@ export class TransitionsComponent implements OnInit {
   }
 
   goNow(): void {
-      d3.selectAll('.block')
-        .transition()
-        .call(this.configure, 1000, 1000)
-        .style('height', '300px')
+    d3.selectAll('.block')
+      .transition()
+      .call(this.configure, 1000, 1000)
+      .style('height', '300px')
   }
 
 }
