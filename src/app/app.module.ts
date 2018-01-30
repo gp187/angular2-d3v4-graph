@@ -1,25 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { ScalesComponent } from './scales/scales.component';
-import {RouterModule} from "@angular/router";
-import {routes} from "./app.routing";
-import { DataComponent } from './data/data.component';
-import { SelectionsComponent } from './selections/selections.component';
-import { VisualizationComponent } from './visualization/visualization.component';
-import { AxesComponent } from './axes/axes.component';
-import { ScatterComponent } from './scatter/scatter.component';
-import { LineComponent } from './line/line.component';
-import { AreaComponent } from './area/area.component';
+import { RouterModule } from '@angular/router';
 import { AnimateComponent } from './animate/animate.component';
-import { TransitionsComponent } from './transitions/transitions.component';
+import { AppComponent } from './app.component';
+import { routes } from './app.routing';
+import { AreaComponent } from './area/area.component';
+import { AxesComponent } from './axes/axes.component';
+import { DashboardComponent } from './Dashboard/dashboard.component';
+import { DataComponent } from './data/data.component';
 import { GeneralUpdatePatternComponent } from './general-update-pattern/general-update-pattern.component';
-import {HeaderComponent} from "./header/header.component";
-import {DashboardComponent} from "./Dashboard/dashboard.component";
-
+import { HeaderComponent } from './header/header.component';
+import { LineComponent } from './line/line.component';
+import { ScalesComponent } from './scales/scales.component';
+import { ScatterComponent } from './scatter/scatter.component';
+import { SelectionsComponent } from './selections/selections.component';
+import { TransitionsComponent } from './transitions/transitions.component';
+import { VisualizationComponent } from './visualization/visualization.component';
 
 @NgModule({
   declarations: [
